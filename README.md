@@ -59,6 +59,10 @@ pnpm lint             # Lint (eslint)
 - **DiffUtils**: Line-level diff engine for incremental patch operations
 - **OS File Blocking**: Silently intercepts `.DS_Store`, `._*`, `Thumbs.db` etc.
 
+## Integrating a New Platform
+
+See the full Chinese SOP at [`docs/sop-platform-integration.md`](docs/sop-platform-integration.md) for a step-by-step guide to connecting any OpenAPI-based platform to WarpFS.
+
 ## License
 
 MIT

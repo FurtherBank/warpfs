@@ -2,6 +2,9 @@
 
 ## SOP: Integrating an External Platform into WarpFS Virtual File System
 
+> **完整中文版 SOP** → [`docs/sop-platform-integration.md`](docs/sop-platform-integration.md)  
+> 下文为英文快速参考。详细步骤、完整代码示例、排坑指南和自检清单请阅读中文文档。
+
 This SOP describes how to create a new driver that maps an external platform's content (e.g. Notion, GitHub Issues, a CMS) into the WarpFS virtual file system.
 
 ### Step 1: Create a New Package

@@ -1,8 +1,8 @@
 # WarpFS
 
-> Make everything to be files ~
+> Make everything to be files ~ Then they can be consumed by AI.
 
-WarpFS (折跃文件系统) maps network content to your local file system via WebDAV. Connect any API — Notion, GitHub Issues, a blog CMS — and browse/edit it as local files using VS Code, Obsidian, or Finder.
+WarpFS (折跃文件系统) maps network content to your local file system via WebDAV. Connect any API — Notion, GitHub Issues, a blog CMS — and browse/edit it as local files using VS Code, Obsidian, AI Tools or Finder.
 
 ## Architecture
 

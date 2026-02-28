@@ -1,0 +1,29 @@
+{
+  "name": "warpfs",
+  "version": "0.1.0",
+  "description": "WarpFS CLI: mount network content as local files",
+  "type": "module",
+  "bin": {
+    "warpfs": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@warpfs/core": "workspace:*",
+    "@warpfs/utils": "workspace:*",
+    "@warpfs/notion": "workspace:*",
+    "cac": "^6.7.0",
+    "picocolors": "^1.1.0",
+    "ora": "^8.0.0"
+  }
+}

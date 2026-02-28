@@ -1,0 +1,29 @@
+{
+  "name": "@warpfs/core",
+  "version": "0.1.0",
+  "description": "WarpFS core WebDAV engine and virtual node abstractions",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@warpfs/utils": "workspace:*",
+    "mime-types": "^2.1.35",
+    "uuid": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/mime-types": "^2.1.4",
+    "@types/uuid": "^10.0.0"
+  }
+}

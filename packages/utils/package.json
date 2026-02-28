@@ -1,0 +1,27 @@
+{
+  "name": "@warpfs/utils",
+  "version": "0.1.0",
+  "description": "WarpFS utility functions: caching, debounce, diff",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "lru-cache": "^11.0.0",
+    "diff": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/diff": "^7.0.0"
+  }
+}

@@ -18,8 +18,9 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "lru-cache": "^11.0.0",
-    "diff": "^7.0.0"
+    "chrome-cookies-secure": "^3.0.1",
+    "diff": "^7.0.0",
+    "lru-cache": "^11.0.0"
   },
   "devDependencies": {
     "@types/diff": "^7.0.0"

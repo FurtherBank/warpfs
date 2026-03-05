@@ -34,8 +34,10 @@ export async function startNotionProvider(options: NotionProviderOptions): Promi
   const server = createProviderServer(rootFolder);
 
   return new Promise((resolve, reject) => {
-    server.on("error", reject);
+    const onError = (err: Error) => reject(err);
+    server.on("error", onError);
     server.listen(port, host, () => {
+      server.removeListener("error", onError);
       console.log(`[WarpFS/Notion] Provider listening on http://${host}:${port}`);
       resolve();
     });

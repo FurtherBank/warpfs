@@ -8,7 +8,7 @@ export class ProviderClient {
   private origin: string;
 
   constructor(origin: string) {
-    // Strip trailing slash
+    // Strip trailing slashes
     this.origin = origin.replace(/\/+$/, "");
   }
 

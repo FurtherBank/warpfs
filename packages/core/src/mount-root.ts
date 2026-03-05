@@ -31,14 +31,14 @@ export class MountRootFolder extends VirtualFolder {
   }
 
   async createChildFile(_name: string): Promise<VirtualFile> {
-    throw new Error("Cannot create files at mount root level");
+    throw new Error("Cannot create files at mount root level. Files must be created within a mounted provider directory.");
   }
 
   async createChildFolder(_name: string): Promise<VirtualFolder> {
-    throw new Error("Cannot create folders at mount root level");
+    throw new Error("Cannot create folders at mount root level. Mounts are configured via WarpFS config.");
   }
 
   async removeChild(_name: string): Promise<boolean> {
-    throw new Error("Cannot remove mounts at runtime");
+    throw new Error("Cannot remove mounts at runtime. Mounts are configured via WarpFS config.");
   }
 }

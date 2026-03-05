@@ -19,7 +19,7 @@ cli
       mounts = mountArgs.map((m) => {
         const eqIdx = m.indexOf("=");
         if (eqIdx === -1) {
-          throw new Error(`Invalid mount format: "${m}". Expected name=origin`);
+          throw new Error(`Invalid mount format: "${m}". Expected format: name=origin (example: notion=http://localhost:3001)`);
         }
         return { name: m.slice(0, eqIdx), origin: m.slice(eqIdx + 1) };
       });

@@ -1,4 +1,5 @@
 import { cac } from "cac";
+import type { MountConfig } from "@warpfs/core";
 import { startCommand } from "./commands/start.js";
 import { stopCommand } from "./commands/stop.js";
 import { linkCommand } from "./commands/link.js";
@@ -10,8 +11,20 @@ cli
   .command("start", "Start the WarpFS WebDAV server")
   .option("-p, --port <port>", "Server port", { default: 8080 })
   .option("--foreground", "Run in foreground (don't daemonize)")
-  .action(async (options: { port: number; foreground?: boolean }) => {
-    await startCommand({ port: options.port, foreground: options.foreground });
+  .option("-m, --mount <mount>", "Mount a provider (format: name=origin). Can be repeated.")
+  .action(async (options: { port: number; foreground?: boolean; mount?: string | string[] }) => {
+    let mounts: MountConfig[] | undefined;
+    if (options.mount) {
+      const mountArgs = Array.isArray(options.mount) ? options.mount : [options.mount];
+      mounts = mountArgs.map((m) => {
+        const eqIdx = m.indexOf("=");
+        if (eqIdx === -1) {
+          throw new Error(`Invalid mount format: "${m}". Expected name=origin`);
+        }
+        return { name: m.slice(0, eqIdx), origin: m.slice(eqIdx + 1) };
+      });
+    }
+    await startCommand({ port: options.port, foreground: options.foreground, mounts });
   });
 
 cli
